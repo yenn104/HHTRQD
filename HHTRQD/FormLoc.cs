@@ -7,6 +7,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -111,8 +112,25 @@ namespace HHTRQD
           cbbChonNganh.Enabled = false;
         }
       }
+    }
+    private void btnClearSelected_Click(object sender, EventArgs e)
+    {
+      if (lvNganh.SelectedItems.Count > 0)
+      {
+        ListViewItem selectedItem = lvNganh.SelectedItems[0]; // Lấy mục được chọn
+        string tenNghanh = selectedItem.Text; // Lấy tên tiêu chí từ mục ListView đã chọn
+        Nghe selectedNganh = listNghe.FirstOrDefault(tc => tc.TenNN == tenNghanh); // Tìm tiêu chí tương ứng trong danh sách các tiêu chí
+        if (selectedNganh != null) // Nếu tìm thấy tiêu chí đã chọn
+        {
+          cbbChonNganh.Items.Add(selectedNganh);  // Thêm tiêu chí đã chọn vào ComboBox
 
-      
+          listNghe.Remove(selectedNganh); // Xóa tiêu chí đã chọn khỏi danh sách các tiêu chí
+          lvNganh.Items.Remove(selectedItem);
+
+          coutNganh--; // Giảm số lượng tiêu chí đã chọn đi 1 đơn vị
+          cbbChonNganh.Enabled = true; // Đặt ComboBox thành trạng thái "kích hoạt" để cho phép người dùng chọn tiếp
+        }
+      }
 
     }
 
@@ -132,9 +150,25 @@ namespace HHTRQD
           cbbChonTieuChi.Enabled = false;
         }
       }
+    }
+    private void button1_Click(object sender, EventArgs e)
+    {
+      if (lvTieuChi.SelectedItems.Count > 0) // Kiểm tra xem có ít nhất một mục được chọn trong ListView không
+      {
+        ListViewItem selectedItem = lvTieuChi.SelectedItems[0]; // Lấy mục được chọn
+        string tenTC = selectedItem.Text; // Lấy tên tiêu chí từ mục ListView đã chọn
+        TChi selectedTieuChi = listTC.FirstOrDefault(tc => tc.TenTC == tenTC); // Tìm tiêu chí tương ứng trong danh sách các tiêu chí
+        if (selectedTieuChi != null) // Nếu tìm thấy tiêu chí đã chọn
+        {
+          cbbChonTieuChi.Items.Add(selectedTieuChi);  // Thêm tiêu chí đã chọn vào ComboBox
 
+          listTC.Remove(selectedTieuChi); // Xóa tiêu chí đã chọn khỏi danh sách các tiêu chí
+          lvTieuChi.Items.Remove(selectedItem);
 
-
+          coutTC--; // Giảm số lượng tiêu chí đã chọn đi 1 đơn vị
+          cbbChonTieuChi.Enabled = true; // Đặt ComboBox thành trạng thái "kích hoạt" để cho phép người dùng chọn tiếp
+        }
+      }
     }
   }
 }

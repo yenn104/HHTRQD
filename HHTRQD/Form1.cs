@@ -33,8 +33,8 @@ namespace HHTRQD
       {
         e.CellStyle.BackColor = Color.LightBlue;
       }
-    
-  }
+
+    }
 
     private void LoadMaTrix(List<TChi> listTC)
     {
@@ -97,7 +97,6 @@ namespace HHTRQD
       }
 
     }
-
 
   }
 }

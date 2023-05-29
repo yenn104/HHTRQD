@@ -169,29 +169,11 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormKetQua.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormKetQua.Designer.cs">
-      <DependentUpon>FormKetQua.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormLoc.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormLoc.Designer.cs">
       <DependentUpon>FormLoc.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormNhapTT.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormNhapTT.Designer.cs">
-      <DependentUpon>FormNhapTT.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormTieuChi.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormTieuChi.Designer.cs">
-      <DependentUpon>FormTieuChi.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Entities\HTRQDContext.cs" />
     <Compile Include="Models\Entities\LichSu.cs" />
@@ -208,17 +190,8 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormKetQua.resx">
-      <DependentUpon>FormKetQua.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormLoc.resx">
       <DependentUpon>FormLoc.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormNhapTT.resx">
-      <DependentUpon>FormNhapTT.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormTieuChi.resx">
-      <DependentUpon>FormTieuChi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
